@@ -2,12 +2,21 @@
 # Meter en la variable Path Anaconda3 Anaconda3/Scripts Anaconda3/Library/bin
 # Descargar ChromeDriver segun la version de Chrome y meterlo en Anaconda3
 from selenium import webdriver
+# Navegadores HeadLess, para que no se vean
+#from selenium import webdriver
+#from selenium.webdriver.chrome.options import Options
+#chrome_options = Options()
+#chrome_options.add_argument('--headless')
+#chrome_options.add_argument('--window-size=1920x1080')
+#driver = webdriver.Chrome(chrome_options=chrome_options)
+
 driver = webdriver.Chrome()
 # Si no funciona la linea anterior, forzamos desde codigo
-# import os
-# chromedriver = "C:\\Users\\carlo\\Anaconda3"
-# os.environ["webdriver.chrome.driver"] = chromedriver
-# driver = webdriver.Chrome(executable_path=chromedriver)
+#import os
+#chromedriver = "/Users/spufi/Downloads/chromedriver"
+#os.environ["webdriver.chrome.driver"] = chromedriver
+#driver = webdriver.Chrome(executable_path=chromedriver)
+
 url = "https://www1.sedecatastro.gob.es/CYCBienInmueble/OVCBusqueda.aspx"
 driver.get(url)
 
@@ -42,10 +51,10 @@ datos.click()
 # la página accesible desde el driver
 
 # Para volver a la pagina anterior usamos JavaScript ejecutado desde el propio driver
-driver.implicitly_wait(10)
-driver.execute_script("window.history.go(-1)")
-driver.implicitly_wait(10)
-driver.execute_script("window.history.go(+1)")
+#driver.implicitly_wait(10)
+#driver.execute_script("window.history.go(-1)")
+#driver.implicitly_wait(10)
+#driver.execute_script("window.history.go(+1)")
 
 # LOCALIZAR ELEMENTOS
 # find_element_by_id() primer elemento
@@ -117,12 +126,5 @@ e = driver.find_elements_by_xpath("(//label)[1]")
 print(e[0].text)
 
 # Cuando hayamos terminado de usar Selenium convene cerrar el driver para liberar recursos
-driver.close()
+#driver.close()
 
-# Navegadores HeadLess, para que no se vean
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-chrome_options = Options()
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--window-size=1920x1080')
-driver = webdriver.Chrome(chrome_options=chrome_options)
