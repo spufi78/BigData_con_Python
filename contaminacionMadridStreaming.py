@@ -12,6 +12,7 @@ path_mac = "/Users/spufi/Downloads/MASTER BIGDATA/Python/BigData_con_Python-mast
 path_win= "C:\\Users\\carlo\\OneDrive - Telefonica\\PycharmProjects\\BigData_Python\\Tema2\\"
 nombreFicheroDatos = 'horario.txt'
 
+# Prueba de git
 # resp = requests.get(url)
 
 # with open(path_win + nombreFicheroDatos, 'wb') as output:
