@@ -3,22 +3,22 @@
 # (una por nivel). Cambio en estructura, que modifique un elemento de la ruta, hara el codigo inservible
 # Con BeautifulSoup podemos buscar elementos sin tener que explicar la ruta compelta find_all()
 from bs4 import BeautifulSoup
-url = "C:\\Users\\carlo\\OneDrive - Telefonica\\PycharmProjects\\BigData_Python\\Tema2\\mini.html"
+url = "/Users/spufi/Downloads/MASTER BIGDATA/Python/BigData_con_Python-master/mini.html"
 with open(url, "r") as f:
     page = f.read() # Se carga la página como un archivo de texto normal
-print("######################print(page)#####################")
-print(page)
-print("######################print(soup.prettify())#####################")
+#print("######################print(page)#####################")
+#print(page)
+#print("######################print(soup.prettify())#####################")
 # Soup contendrá la página como una cadena de
 # caracteres en un formato interno estructurado
 # Indicamos analizador sintáctico (parser) sencillo.
 # Si página más complicada podemos usar "html5lib", aunque de mas lento procesamiento
 soup = BeautifulSoup(page, "html.parser")
-print(soup.prettify())
+#print(soup.prettify())
 # NAVEGACION RELATIVA DE mini.html
 divs = soup.find_all("div")
 print("######################print(divs[0].get_text())#####################")
-print(divs[0].get_text())
+print(divs[1].get_text())
 # Podemos reducir aun mas el codigo con el metodo find que devuelve directamente el primer objeto
 print(soup.find("div").get_text())
 # Estos metodos siguen dependiendo, aunque en menor medida, de la ruta de los elementos en el arbol
